@@ -1,0 +1,13 @@
+.field  {
+	border: solid black 1px;
+	height: 50px;
+	width: 50px;
+	float: left;
+	text-align: center;
+	vertical-align: middle;
+}
+
+.X {
+	background-color: black;
+}
+
