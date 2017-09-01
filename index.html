@@ -10,12 +10,6 @@
 <body>
   <div class="container">
 
-    <form>
-      <input type="radio" name="symbol" value="X">X<br>
-      <input type="radio" name="symbol" value="O">O<br>
-      <input type="submit" name="submit" value="Submit">
-    </form>
-
     <div id="playing-field">
       <div class="row" id="top">
         <div class="field top left dia1"></div>
@@ -35,6 +29,13 @@
         <div class="field bottom right dia1"></div>
       </div>
     </div>
+
+    <div class="alert" role="alert" id="message"></div>
+    <form>
+      <input type="radio" name="symbol" value="X">X<br>
+      <input type="radio" name="symbol" value="O">O<br>
+      <input type="submit" name="submit" value="Submit">
+    </form>
 
   </div>  
 </body>

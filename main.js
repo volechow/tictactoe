@@ -2,6 +2,13 @@ function clearField() {
   $(".field").text("");
 }
 
+function showResult(message) {
+  $("#message").text(message);
+  $("#message").addClass("alert-info");
+  $("#message").show();
+  $("#message").fadeOut(3000);
+}
+
 function isWinner(field, symbol) {
   var combi = "";
   var class_string = field.attr("class");
@@ -55,7 +62,10 @@ function isWinner(field, symbol) {
   return false;
 }
 
+
+
 $("#playing-field").hide();
+$("#message").hide();
 
 $(document).ready(function() {
   var player;
@@ -64,7 +74,7 @@ $(document).ready(function() {
   var opposite = {"X":"O","O":"X"};
 
   $(".field").click(function() {
-   
+    
     // mark an unused field
     if ($(this).text() == "") {
       count++;
@@ -72,7 +82,7 @@ $(document).ready(function() {
 
       // check for winning combination for player
       if (isWinner($(this), current_turn)) {
-        console.log(current_turn + " won!");
+        showResult(current_turn + " won!");
         clearField();
         count = 0;
         return;
@@ -82,7 +92,7 @@ $(document).ready(function() {
     
     // all fields marked
     if (count >= 9) {
-      console.log("It's a draw!");
+      showResult("It's a draw!");
       clearField();
       count = 0;
     }
